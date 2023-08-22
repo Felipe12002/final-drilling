@@ -1,17 +1,28 @@
 from django.shortcuts import render
+from .forms import LaboratorioForm
+from .models import Laboratorio
 
 # Create your views here.
 def v_list(request):
     context = {}
     return render(request, 'list.html', context)
-use "git push" to publish your local commits
+
 def v_create(request):
-    context = {}
+    context = {
+        'formulario': LaboratorioForm()
+    }
     return render(request, 'create.html', context)
 
 def v_update(request, laboratorio_id):
-    context = {}
-    return render(request, 'update.html', context)
+    lab = Laboratorio.objects.get(id = laboratorio_id)
+
+    if request.method == 'POST':
+        pass # Aqui invluir mas codigo
+    else:
+        context = {
+            'formedicion': LaboratorioForm(instance = lab)
+        }
+        return render(request, 'update.html', context)
 
 def v_delete(request, laboratorio_id):
     context = {}
