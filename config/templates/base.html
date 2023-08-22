@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        {% block content %}
+        {% endblock %}
+        <footer>
+            <div>
+                Has visitado esta pagina {{ numveces }}.
+            </div>
+            <div>
+                <a>Ir a la pagina de inicio</a> | 
+                <a href="/create">Crear laboratorio</a>
+            </div>
+        </footer>
+    </body>
+</html>

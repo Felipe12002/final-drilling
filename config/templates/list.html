@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Listar laboratorio</h1>
+    <table>
+        <tbody>
+            {% for lab in labos %}
+            <tr>
+                <td>{{ lab.id }}</td>
+                <td>{{ lab.nombre }}</td>
+                <td>
+                    <a href="/update/{{ lab.id }}">Editar</a>
+                </td>
+                <td>
+                    <a href="/delete/{{ lab.id }}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

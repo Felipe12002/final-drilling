@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Eliminar laboratorio</h1>
+    <form method="post">
+        {% csrf_token %}
+        <strong>
+            Estas seguro de eliminar?
+            {{ lab.nombre }}
+        </strong>
+        <button type="submit">Si, confirmo</button>
+    </form>
+{% endblock %}
